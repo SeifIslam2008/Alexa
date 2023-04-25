@@ -74,7 +74,7 @@ def run():
                     speak(a)
             elif " i have a question" in command:
                 question = command.replace("i have a question " , " ")
-                question = question.replace("seif", "")
+                question = question.replace("alexa", "")
                 URL = "https://www.google.co.ma/search?hl="+LANG+"&q="+question
                 page = requests.get(URL, headers=headers)
                 soup = BeautifulSoup(page.content, 'html.parser')
@@ -85,14 +85,14 @@ def run():
                 except:
                     pass 
 
-            elif "song" in command or "music " in command or "Surah " in command or " Sorah"in command:
-                command = command.replace("seif", "")
+            elif "song" in command or "music " in command or "Surah " in command or " Sorat"in command:
+                command = command.replace("alexa", "")
                 speak(intro + "here you go" +command)
                 pywhatkit.playonyt(command)
 
             elif " who is  " in command:
                 command = command.replace("   who is ", " ")
-                command = command.replace(" seif", " ")
+                command = command.replace(" alexa", " ")
                 info= wikipedia.summary(command,1)
                 speak(info)
 
